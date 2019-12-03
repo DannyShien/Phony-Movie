@@ -1,18 +1,19 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
+ 
 const NavBar = () => {
     return (
         <div>
-            <div>Phony Movies</div>
+            <Link to = '/'>PhonyMovies</Link>
             <div>
-                <p>Home</p>
-                <p>TV Shows</p>
-                <p>Movies</p>
-                <p>My List</p>
+                <Link to ='/tv'>TV Shows</Link>
+                <Link to ='/movies'>Movies</Link>
+                <Link to ='/recent'>Recently Added</Link>
+                <Link to ='/mylist'>My List</Link>
             </div>
             <div>
                 <p>search bar</p>
-                <p>settings</p>
+                <Link to ='/setting'>Profile</Link>
             </div>
         </div>
     )
