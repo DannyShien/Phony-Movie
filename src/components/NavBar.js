@@ -6,7 +6,7 @@ const NavBar = () => {
     return (
         <div className='navbar'>
             <div className='navTitle navAlign'>
-                <Link to = '/'>PhonyMovies</Link>
+                <Link to = '/' className='links'>PhonyMovies</Link>
             </div>
             <div className='navOptions navAlign'>
                 <Link to = '/tv' className='links'>TV Shows</Link>
@@ -16,7 +16,7 @@ const NavBar = () => {
             </div>
             <div className='navProfile navAlign'>
                 <Link to = '/search'>Search</Link>
-                <Link to = '/setting'>Profile</Link>
+                <Link to = '/setting' className='links'>Profile</Link>
             </div>
         </div>
     )
