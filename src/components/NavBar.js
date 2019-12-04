@@ -4,17 +4,19 @@ import './NavBar.css'
  
 const NavBar = () => {
     return (
-        <div>
-            <Link to = '/'>PhonyMovies</Link>
-            <div>
-                <Link to ='/tv'>TV Shows</Link>
-                <Link to ='/movies'>Movies</Link>
-                <Link to ='/recent'>Recently Added</Link>
-                <Link to ='/mylist'>My List</Link>
+        <div className='navbar'>
+            <div className='navTitle navAlign'>
+                <Link to = '/'>PhonyMovies</Link>
             </div>
-            <div>
-                <p>search bar</p>
-                <Link to ='/setting'>Profile</Link>
+            <div className='navOptions navAlign'>
+                <Link to = '/tv' className='links'>TV Shows</Link>
+                <Link to = '/movies' className='links'>Movies</Link>
+                <Link to = '/recent' className='links'>Recently Added</Link>
+                <Link to = '/mylist' className='links'>My List</Link>
+            </div>
+            <div className='navProfile navAlign'>
+                <Link to = '/search'>Search</Link>
+                <Link to = '/setting'>Profile</Link>
             </div>
         </div>
     )

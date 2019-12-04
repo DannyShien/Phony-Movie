@@ -1,6 +1,5 @@
 .navbar {
     display: flex;
-    /* justify-content: space-around; */
     height: 50px;
     width: 100vw;
     background-color: lightgrey;
@@ -9,7 +8,6 @@
 .navTitle {
     justify-content: center;
     width: 15%;
-    /* flex: 1; */
 }
 .navOptions {
     justify-content: flex-start;
@@ -18,7 +16,7 @@
 }
 .navOptions .links {
     margin-right: 20px;
-    color: red;
+    /* color: red; */
 }
 .navProfile {
     justify-content: space-evenly;
@@ -27,7 +25,7 @@
 .navAlign {
     display: flex; 
     align-items: center; 
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
 }
 .links {
     text-decoration: none;
