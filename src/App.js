@@ -6,10 +6,12 @@ import {
 
 import './App.css';
 import Home from './components/Home'
+import NavBar from './components/NavBar';
 
 function App() {
     return (
         <Router>
+            <NavBar />
             <div className="App">
                 <Route path = '/' exact component={Home} />
                 {/* <Route path = '/' exact component={tv} /> */}
@@ -22,3 +24,4 @@ function App() {
 }
 
 export default App;
+
