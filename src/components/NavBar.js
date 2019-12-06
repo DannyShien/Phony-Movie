@@ -9,8 +9,8 @@ const NavBar = () => {
                 <Link to = '/' className='links'>PhonyMovies</Link>
             </div>
             <div className='navOptions navAlign'>
-                <Link to = '/tv' className='links'>TV Shows</Link>
                 <Link to = '/movies' className='links'>Movies</Link>
+                <Link to = '/tv' className='links'>TV Shows</Link>
                 <Link to = '/recent' className='links'>Recently Added</Link>
                 <Link to = '/mylist' className='links'>My List</Link>
             </div>
