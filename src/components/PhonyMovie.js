@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-
+import Genre from './Genre';
 
 class PhonyMovie extends Component {
     constructor(props) {
         super(props); 
         this.state = {
-            // genre: []
+            genre: [],
+            action: '',
+            adventure: '', 
+            animation: '',
+            comedy: '', 
+            documentary: '',
+            drama: '',
+            horror: '',
+            scifi: '',
+            thriller: ''
         }
     }
 
@@ -28,26 +37,34 @@ class PhonyMovie extends Component {
     getMovieGenre = () => {
         const TMDB = `${process.env.REACT_APP_TMDB_KEY}`
         fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${TMDB}&language=en-US`)
-            .then((response) => {
-                // console.log(response.json())
-            })
-            // .catch(err => {console.log(err)})
-            // .then(this.genre)
+            // NOTE: Remember to "return" the response!! This will save you hours of research. Lol 
+            // On the bright side, I learned a bit more about async/await! #noloss #onlylessons
+            .then(r => {return r.json()})
+            .catch(err => {console.log(err)})
+            .then(this.genre)
     }
-    genre = (genre) => {
-        console.log(`MOVIE GENRE: `, genre)
+    genre = (genreObj) => {
+        const genreList = genreObj.genres
+        console.log(`MOVIE GENRE: `, genreList)
+        let action = genreList[0]
+        // console.log(action)
+
+        this.setState({
+            genre: genreList,
+            action: action
+        })
     }
-
-
 
     render() {
         return (
             <div>
-                <div>Different movie categories</div>
-                <div>Different movie categories</div>
-                <div>Different movie categories</div>
-                <div>Different movie categories</div>
-                <div>Different movie categories</div>
+                <Genre 
+                    action = {this.state.action}
+                />
+                <div>Different movie genre</div>
+                <div>Different movie genre</div>
+                <div>Different movie genre</div>
+                <div>Different movie genre</div>
             </div>
         )
     }
