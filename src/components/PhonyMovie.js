@@ -111,6 +111,30 @@ class PhonyMovie extends Component {
                 <Genre 
                     action = {this.state.action}
                 />
+                <Genre
+                    adventure = {this.state.adventure}
+                />
+                <Genre
+                    anime = {this.state.anime}
+                />
+                <Genre
+                    comedy = {this.state.comedy}
+                />
+                <Genre
+                    documentary ={this.state.documentary}
+                />
+                <Genre
+                    drama = {this.state.drama}
+                />
+                <Genre  
+                    horror = {this.state.drama}
+                />
+                <Genre
+                    scifi = {this.state.scifi}
+                />
+                <Genre
+                    thriller = {this.state.thriller}
+                />
             </div>
         )
     }
