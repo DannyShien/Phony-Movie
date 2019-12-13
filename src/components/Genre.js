@@ -4,7 +4,7 @@ const Genre = ({action}) => {
     console.log(action)
     return (
         <div>
-
+            
         </div>
     )
 }
