@@ -78,28 +78,28 @@ class PhonyMovie extends Component {
             .then(this.movies)
     }
 
-    movies = (genre) => {
-        let actionGenre = genre[0]
-        let adventureGenre = genre[1]
-        let animeGenre = genre[2]
-        let comedyGenre = genre[3]
-        let documentaryGenre = genre[4]
-        let dramaGenre = genre[5]
-        let horrorGenre = genre[6]
-        let sciFiGenre = genre[7]
-        let thrillerGenre = genre[8]
-        console.log(`thriller: `, thrillerGenre)
+    movies = ([actionGenre, adventureGenre, animeGenre, comedyGenre, documentaryGenre, dramaGenre, horrorGenre, sciFiGenre, thrillerGenre]) => {
+        let action = actionGenre
+        let adventure = adventureGenre
+        let anime = animeGenre
+        let comedy = comedyGenre
+        let documentary = documentaryGenre
+        let drama = dramaGenre
+        let horror = horrorGenre
+        let sciFi = sciFiGenre
+        let thriller = thrillerGenre
+
 
         this.setState ({
-            action: actionGenre, 
-            adventure: adventureGenre, 
-            anime: animeGenre, 
-            comedy: comedyGenre, 
-            documentary: documentaryGenre, 
-            drama: dramaGenre, 
-            horror: horrorGenre, 
-            scifi: sciFiGenre, 
-            thriller: thrillerGenre  
+            action: action, 
+            adventure: adventure, 
+            anime: anime, 
+            comedy: comedy, 
+            documentary: documentary,  
+            drama: drama, 
+            horror: horror, 
+            scifi: sciFi, 
+            thriller: thriller
         })
     }
  
