@@ -7,7 +7,7 @@ class PhonyMovie extends Component {
         super(props); 
         this.state = {
             genre: [],
-            action: '',
+            action: [],
             adventure: '', 
             anime: '',
             comedy: '', 
@@ -90,7 +90,7 @@ class PhonyMovie extends Component {
         let thrillerGenre = genre[8]
         console.log(`thriller: `, thrillerGenre)
 
-        this.setState = ({
+        this.setState ({
             action: actionGenre, 
             adventure: adventureGenre, 
             anime: animeGenre, 
