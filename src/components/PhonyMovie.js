@@ -5,23 +5,24 @@ import Genre from './Genre';
 class PhonyMovie extends Component {
     constructor(props) {
         super(props); 
-        // this.state = {
-        //     genre: [],
-        //     action: '',
-        //     adventure: '', 
-        //     anime: '',
-        //     comedy: '', 
-        //     documentary: '',
-        //     drama: '',
-        //     horror: '',
-        //     scifi: '',
-        //     thriller: ''
-        // }
+        this.state = {
+            genre: [],
+            action: '',
+            adventure: '', 
+            anime: '',
+            comedy: '', 
+            documentary: '',
+            drama: '',
+            horror: '',
+            scifi: '',
+            thriller: ''
+        }
     }
 
     componentDidMount() {
         this.movieGenreId()
     }
+
     // ========================================
     // ========= USING ASYNC/AWAIT ============
     // async getMovieGenre () {
@@ -42,8 +43,8 @@ class PhonyMovie extends Component {
             .then(r => {return r.json()})
             .catch(err => {console.log(err)})
             .then(this.allGenres)
-            // .then(this.movieGenre_All)
     }
+
     allGenres = (genreObj) => {
         const genreList = genreObj.genres
         console.log(`MOVIE GENRE: `, genreList)
@@ -58,79 +59,58 @@ class PhonyMovie extends Component {
         let sciFiId = genreList[14].id
         let thrillerId = genreList[16].id
 
-
-        // CURRENT SITUATION: The API url needs individual genreID to fetch
-        // the individual json data. Doing it this way will require me to 
-        // make MULTIPLE fetches for the different genres....DOES NOT SEEM SUFFICIENT!!!
         const actionGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${actionId}`)
-            // .then(r => {return r.json()})
-            // .catch(err => {console.log(err)})
-            // .then(this.action)
         const adventureGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${adventureId}`)
-            // .then(r => {return r.json()})
         const animeGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${animeId}`)
-            // .then(r => {return r.json()})
-            // .catch(err => {console.log(err)})
-            // .then(this.anime)
         const comedyGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${comedyId}`)
-            // .then(r => {return r.json()})
         const documentaryGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${documentaryId}`)
-            // .then(r => {return r.json()})
         const dramaGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${dramaId}`)
-            // .then(r => {return r.json()})    
         const horrorGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${horrorId}`)
-            // .then(r => {return r.json()})
         const sciFiGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${sciFiId}`)
-            // .then(r => {return r.json()})
         const thrillerGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${thrillerId}`)
-            // .then(r => {return r.json()})
 
         Promise.all([actionGenre, adventureGenre, animeGenre, comedyGenre, documentaryGenre, dramaGenre, horrorGenre, sciFiGenre, thrillerGenre])
-            .then(values => {
-                return Promise.all(values.map(r => r.json()))
+            .then(values => {return Promise.all(values.map(r => r.json()))})
+            .catch(error => {
+                console.log('ERROR!')
+                console.log(error)
             })
-            .then(values => {
-                console.log(values)
-            })
-        
-
-        // this.setState({
-        //     genre: genreList,
-        //     action: actionId,
-        //     adventure: adventureId, 
-        //     anime: animeId,
-        //     comedy: comedyId, 
-        //     documentary: docId,
-        //     drama: dramaId,
-        //     horror: horrorId,
-        //     scifi: scienceFictionId,
-        //     thriller: thrillerId
-        // })
+            .then(this.movies)
     }
 
-    // movieGenre_All = (obj) => {
-    //     console.log(obj)
-    //     const TMDB = `${process.env.REACT_APP_TMDB_KEY}`
-    //     let actionId = this.state.action
-    //     let adventureId = this.state.adventure
-    //     let animeId = this.state.anime
-    //     let comedyId = this.state.comedy
-    //     let documentaryId = this.state.documentary
-    //     let dramaId = this.state.drama
-    //     let horrorId = this.state.horror
-    //     let sciFiId = this.state.scifi
-    //     let thrillerId = this.state.thriller
+    movies = (genre) => {
+        let actionGenre = genre[0]
+        let adventureGenre = genre[1]
+        let animeGenre = genre[2]
+        let comedyGenre = genre[3]
+        let documentaryGenre = genre[4]
+        let dramaGenre = genre[5]
+        let horrorGenre = genre[6]
+        let sciFiGenre = genre[7]
+        let thrillerGenre = genre[8]
+        console.log(`thriller: `, thrillerGenre)
 
-   
-    // }
-
+        this.setState = ({
+            action: actionGenre, 
+            adventure: adventureGenre, 
+            anime: animeGenre, 
+            comedy: comedyGenre, 
+            documentary: documentaryGenre, 
+            drama: dramaGenre, 
+            horror: horrorGenre, 
+            scifi: sciFiGenre, 
+            thriller: thrillerGenre  
+        })
+    }
+ 
 
     render() {
+        console.log(this.state.action)
         return (
             <div>
-                {/* <Genre 
+                <Genre 
                     action = {this.state.action}
-                /> */}
+                />
             </div>
         )
     }
