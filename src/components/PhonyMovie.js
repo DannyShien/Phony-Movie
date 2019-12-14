@@ -8,14 +8,14 @@ class PhonyMovie extends Component {
         this.state = {
             genre: [],
             action: [],
-            adventure: '', 
-            anime: '',
-            comedy: '', 
-            documentary: '',
-            drama: '',
-            horror: '',
-            scifi: '',
-            thriller: ''
+            adventure: [], 
+            anime: [],
+            comedy: [], 
+            documentary: [],
+            drama: [],
+            horror: [],
+            scifi: [],
+            thriller: []
         }
     }
 
@@ -47,7 +47,6 @@ class PhonyMovie extends Component {
 
     allGenres = (genreObj) => {
         const genreList = genreObj.genres
-        console.log(`MOVIE GENRE: `, genreList)
         const TMDB = `${process.env.REACT_APP_TMDB_KEY}`
         let actionId = genreList[0].id
         let adventureId = genreList[1].id
@@ -79,7 +78,8 @@ class PhonyMovie extends Component {
     }
 
     movies = ([actionGenre, adventureGenre, animeGenre, comedyGenre, documentaryGenre, dramaGenre, horrorGenre, sciFiGenre, thrillerGenre]) => {
-        let action = actionGenre
+        // console.log(actionGenre.results)
+        let action = actionGenre.results
         let adventure = adventureGenre
         let anime = animeGenre
         let comedy = comedyGenre
@@ -105,16 +105,18 @@ class PhonyMovie extends Component {
  
 
     render() {
-        console.log(this.state.action)
+        // CURRENT SITUATION: Each Genre component below passes it's own attribute. 
+        // Genre.js can only return 1 prop at a time. Need to figure out how to cycle and display
+        // each genre's prop that is being passed for a single component. 
         return (
             <div>
                 <Genre 
                     action = {this.state.action}
                 />
-                <Genre
+                {/* <Genre
                     adventure = {this.state.adventure}
-                />
-                <Genre
+                /> */}
+                {/* <Genre
                     anime = {this.state.anime}
                 />
                 <Genre
@@ -134,7 +136,7 @@ class PhonyMovie extends Component {
                 />
                 <Genre
                     thriller = {this.state.thriller}
-                />
+                /> */}
             </div>
         )
     }
