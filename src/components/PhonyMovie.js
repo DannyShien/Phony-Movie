@@ -7,14 +7,14 @@ class PhonyMovie extends Component {
         super(props); 
         this.state = {
             action: [],
-            adventure: []
-        //     anime: [],
-        //     comedy: [], 
-        //     documentary: [],
-        //     drama: [],
-        //     horror: [],
-        //     scifi: [],
-        //     thriller: []
+            adventure: [],
+            anime: [],
+            comedy: [], 
+            documentary: [],
+            drama: [],
+            horror: [],
+            scifi: [],
+            thriller: []
         }
     }
 
@@ -82,18 +82,24 @@ class PhonyMovie extends Component {
         let Action = actionGenre.results
         let Adventure = adventureGenre.results
         console.log(Adventure)
-        // let anime = animeGenre
-        // let comedy = comedyGenre
-        // let documentary = documentaryGenre
-        // let drama = dramaGenre
-        // let horror = horrorGenre
-        // let sciFi = sciFiGenre
-        // let thriller = thrillerGenre
-
+        let Anime = animeGenre.results
+        let Comedy = comedyGenre.results
+        let Documentary = documentaryGenre.results
+        let Drama = dramaGenre.results
+        let Horror = horrorGenre.results
+        let SciFi = sciFiGenre.results
+        let Thriller = thrillerGenre.results
 
         this.setState ({
             action: Action,
-            adventure: Adventure
+            adventure: Adventure,
+            anime: Anime, 
+            comedy: Comedy,
+            documentary: Documentary,
+            drama: Drama, 
+            horror: Horror, 
+            scifi: SciFi,
+            thriller: Thriller
         })
 
     }
@@ -108,30 +114,14 @@ class PhonyMovie extends Component {
                 <Genre 
                     action = {this.state.action}
                     adventure = {this.state.adventure}
-                />
-                {/* <Genre
-                /> */}
-                {/* <Genre
                     anime = {this.state.anime}
-                />
-                <Genre
                     comedy = {this.state.comedy}
-                />
-                <Genre
-                    documentary ={this.state.documentary}
-                />
-                <Genre
+                    documentary = {this.state.documentary}
                     drama = {this.state.drama}
-                />
-                <Genre  
-                    horror = {this.state.drama}
-                />
-                <Genre
+                    horror = {this.state.horror}
                     scifi = {this.state.scifi}
-                />
-                <Genre
                     thriller = {this.state.thriller}
-                /> */}
+                />
             </div>
         )
     }
