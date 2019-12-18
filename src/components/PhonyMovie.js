@@ -6,16 +6,17 @@ class PhonyMovie extends Component {
     constructor(props) {
         super(props); 
         this.state = {
-            genre: [],
-            action: [],
-            adventure: [], 
-            anime: [],
-            comedy: [], 
-            documentary: [],
-            drama: [],
-            horror: [],
-            scifi: [],
-            thriller: []
+            action : []
+        //     genre: [],
+        //     action: [],
+        //     adventure: [], 
+        //     anime: [],
+        //     comedy: [], 
+        //     documentary: [],
+        //     drama: [],
+        //     horror: [],
+        //     scifi: [],
+        //     thriller: []
         }
     }
 
@@ -42,10 +43,10 @@ class PhonyMovie extends Component {
             // On the bright side, I learned a bit more about async/await! #nolosses #onlylessons
             .then(r => {return r.json()})
             .catch(err => {console.log(err)})
-            .then(this.allGenres)
+            .then(this.fetchMovieGenres)
     }
 
-    allGenres = (genreObj) => {
+    fetchMovieGenres = (genreObj) => {
         const genreList = genreObj.genres
         const TMDB = `${process.env.REACT_APP_TMDB_KEY}`
         let actionId = genreList[0].id
@@ -74,44 +75,39 @@ class PhonyMovie extends Component {
                 console.log('ERROR!')
                 console.log(error)
             })
-            .then(this.movies)
+            .then(this.allGenres)
     }
 
-    movies = ([actionGenre, adventureGenre, animeGenre, comedyGenre, documentaryGenre, dramaGenre, horrorGenre, sciFiGenre, thrillerGenre]) => {
-        // console.log(actionGenre.results)
-        let action = actionGenre.results
-        let adventure = adventureGenre
-        let anime = animeGenre
-        let comedy = comedyGenre
-        let documentary = documentaryGenre
-        let drama = dramaGenre
-        let horror = horrorGenre
-        let sciFi = sciFiGenre
-        let thriller = thrillerGenre
-
+    allGenres = ([actionGenre, adventureGenre, animeGenre, comedyGenre, documentaryGenre, dramaGenre, horrorGenre, sciFiGenre, thrillerGenre]) => {
+        // let allMG = [actionGenre, adventureGenre, animeGenre, comedyGenre, documentaryGenre, dramaGenre, horrorGenre, sciFiGenre, thrillerGenre]
+        console.log(actionGenre.results)
+        let Action = actionGenre.results
+        console.log(`ARRAY OF ACTION GENRES: `, Action)
 
         this.setState ({
-            action: action, 
-            adventure: adventure, 
-            anime: anime, 
-            comedy: comedy, 
-            documentary: documentary,  
-            drama: drama, 
-            horror: horror, 
-            scifi: sciFi, 
-            thriller: thriller
+            action: Action
         })
+
+
+        // let adventure = adventureGenre
+        // let anime = animeGenre
+        // let comedy = comedyGenre
+        // let documentary = documentaryGenre
+        // let drama = dramaGenre
+        // let horror = horrorGenre
+        // let sciFi = sciFiGenre
+        // let thriller = thrillerGenre
     }
  
 
     render() {
-        // CURRENT SITUATION: Each Genre component below passes it's own attribute. 
+        // SITUATION: Each Genre component below passes it's own attribute. 
         // Genre.js can only return 1 prop at a time. Need to figure out how to cycle and display
         // each genre's prop that is being passed for a single component. 
         return (
             <div>
                 <Genre 
-                    action = {this.state.action}
+                    genres = {this.state.action}
                 />
                 {/* <Genre
                     adventure = {this.state.adventure}
