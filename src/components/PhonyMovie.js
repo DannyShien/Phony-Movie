@@ -6,10 +6,8 @@ class PhonyMovie extends Component {
     constructor(props) {
         super(props); 
         this.state = {
-            action : []
-        //     genre: [],
-        //     action: [],
-        //     adventure: [], 
+            action: [],
+            adventure: []
         //     anime: [],
         //     comedy: [], 
         //     documentary: [],
@@ -80,16 +78,10 @@ class PhonyMovie extends Component {
 
     allGenres = ([actionGenre, adventureGenre, animeGenre, comedyGenre, documentaryGenre, dramaGenre, horrorGenre, sciFiGenre, thrillerGenre]) => {
         // let allMG = [actionGenre, adventureGenre, animeGenre, comedyGenre, documentaryGenre, dramaGenre, horrorGenre, sciFiGenre, thrillerGenre]
-        console.log(actionGenre.results)
+        // console.log(actionGenre.results)
         let Action = actionGenre.results
-        console.log(`ARRAY OF ACTION GENRES: `, Action)
-
-        this.setState ({
-            action: Action
-        })
-
-
-        // let adventure = adventureGenre
+        let Adventure = adventureGenre.results
+        console.log(Adventure)
         // let anime = animeGenre
         // let comedy = comedyGenre
         // let documentary = documentaryGenre
@@ -97,6 +89,13 @@ class PhonyMovie extends Component {
         // let horror = horrorGenre
         // let sciFi = sciFiGenre
         // let thriller = thrillerGenre
+
+
+        this.setState ({
+            action: Action,
+            adventure: Adventure
+        })
+
     }
  
 
@@ -107,10 +106,10 @@ class PhonyMovie extends Component {
         return (
             <div>
                 <Genre 
-                    genres = {this.state.action}
+                    action = {this.state.action}
+                    adventure = {this.state.adventure}
                 />
                 {/* <Genre
-                    adventure = {this.state.adventure}
                 /> */}
                 {/* <Genre
                     anime = {this.state.anime}
