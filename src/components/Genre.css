@@ -1,0 +1,14 @@
+.genre {
+    display: flex;
+    outline: 1px solid red;
+    height: 200px;
+    /* flex: 1; */
+    overflow: auto;
+}
+.genreList {
+    width: 313px;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    outline: 1px solid blue;
+}j
