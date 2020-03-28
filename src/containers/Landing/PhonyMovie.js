@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import Genre from '../../components/genre/GenreDisplay';
-import PhonyMovie from './PhonyMovie.css';
+import './PhonyMovie.css';
 
 class PhonyMovie extends Component {
     constructor(props) {

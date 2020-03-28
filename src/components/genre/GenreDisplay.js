@@ -1,4 +1,5 @@
 import React from 'react';
+import './GenreDisplay.css';
 
 
 const GenreDisplay = ({genreType, headerText}) => {
@@ -6,21 +7,24 @@ const GenreDisplay = ({genreType, headerText}) => {
     let movieGenres = genreType.map((genreList, i) => {
         let titles = genreList.title
         let poster = genreList.poster_path
+        // let poster = `https://image.tmdb.org/t/p/w500/${poster}.jpg`
         let id = genreList.id
         return (
             <div key={id}>
                 <div>
                     {titles}
                 </div>
-                <img src={poster} atl='video poster' />
+                <img src={`https://image.tmdb.org/t/p/w500/${poster}.jpg`} alt='video poster' />
             </div>
         )
     })
     
     return (
-        <div>
+        <div className='genre'>
             <h3>{headerText}</h3>
-            <div>{movieGenres}</div>
+            <div className='genreCarousel'>
+                {movieGenres}
+            </div>
         </div>
     )
 }
