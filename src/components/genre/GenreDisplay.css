@@ -1,10 +1,13 @@
 .genre {
     display: flex;
     flex-direction: column;
-    outline: 1px solid red;
-    height: 200px;
+    height: 45%;
     overflow: auto;
+    outline: 1px solid red;
 }
 .genre h3 {
     margin: 5px;
+}
+.genreCarousel {
+    display: flex; 
 }
