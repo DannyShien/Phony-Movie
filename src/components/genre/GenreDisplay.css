@@ -1,0 +1,10 @@
+.genre {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid red;
+    height: 200px;
+    overflow: auto;
+}
+.genre h3 {
+    margin: 5px;
+}
