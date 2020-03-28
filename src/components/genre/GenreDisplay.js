@@ -3,7 +3,7 @@ import './GenreDisplay.css';
 import Image from './../image/Image';
 
 
-const GenreDisplay = ({genreType, headerText}) => {
+const GenreDisplay = ({genreType, headerText, style}) => {
     console.log(genreType)
     let movieGenres = genreType.map((genreList, i) => {
         let titles = genreList.title
@@ -15,7 +15,7 @@ const GenreDisplay = ({genreType, headerText}) => {
                     src={`https://image.tmdb.org/t/p/w154/${poster}`} 
                     alt='video poster' 
                     style={{
-                        margin: '3px'
+                        margin: '3px',
                     }}
                 />
             </div>
@@ -24,7 +24,7 @@ const GenreDisplay = ({genreType, headerText}) => {
     
     return (
         <div className='genre'>
-            <h3>{headerText}</h3>
+            <h3 style={style}>{headerText}</h3>
             <div className='genreCarousel'>
                 {movieGenres}
             </div>
