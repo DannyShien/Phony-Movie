@@ -8,8 +8,8 @@ import PhonyMovie from './containers/Landing/PhonyMovie';
 const App = () => {
     return (
         <Router>
-            <NavBar />
             <div className="App">
+                <NavBar />
                 <Route path = '/' exact component={PhonyMovie} />
                 {/* <Route path = '/' exact component={movies} /> */}
                 {/* <Route path = '/' exact component={tv} /> */}
