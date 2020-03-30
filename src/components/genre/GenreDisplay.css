@@ -1,7 +1,8 @@
 .genre {
     display: flex;
     flex-direction: column;
-    height: 50%;
+    justify-content: space-evenly;
+    height: 300px;
 }
 .genre h3 {
     display: flex; 

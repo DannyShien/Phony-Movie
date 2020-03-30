@@ -48,18 +48,19 @@ class PhonyMovie extends Component {
         let adventureId = genreList[1].id
         let animeId = genreList[2].id
         let documentaryId = genreList[5].id
-        let horrorId = genreList[10].id
-        let sciFiId = genreList[14].id
+        // let horrorId = genreList[10].id
+        // let sciFiId = genreList[14].id
 
         const actionGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${actionId}`)
         const adventureGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${adventureId}`)
         const animeGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${animeId}`)
         const documentaryGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${documentaryId}`)
-        const horrorGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${horrorId}`)
-        const sciFiGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${sciFiId}`)
+        // const horrorGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${horrorId}`)
+        // const sciFiGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${sciFiId}`)
 
-        Promise.all([actionGenre, adventureGenre, 
-            animeGenre, documentaryGenre, horrorGenre, sciFiGenre,
+        Promise.all([actionGenre, adventureGenre, animeGenre, 
+            documentaryGenre, 
+            // horrorGenre, sciFiGenre,
         ])
             .then(values => { return Promise.all(values.map(r => r.json())) })
             .catch(error => {
@@ -69,24 +70,25 @@ class PhonyMovie extends Component {
             .then(this.allGenres)
     }
 
-    allGenres = ([actionGenre, adventureGenre, 
-        animeGenre, documentaryGenre, horrorGenre, sciFiGenre, 
+    allGenres = ([actionGenre, adventureGenre, animeGenre, 
+        documentaryGenre, 
+        // horrorGenre, sciFiGenre, 
     ]) => {
         // console.log(actionGenre)
         let Action = actionGenre.results
         let Adventure = adventureGenre.results
         let Anime = animeGenre.results
         let Documentary = documentaryGenre.results
-        let Horror = horrorGenre.results
-        let SciFi = sciFiGenre.results
+        // let Horror = horrorGenre.results
+        // let SciFi = sciFiGenre.results
 
         this.setState ({
             action: Action,
             adventure: Adventure,
             anime: Anime, 
             documentary: Documentary,
-            horror: Horror, 
-            scifi: SciFi,
+            // horror: Horror, 
+            // scifi: SciFi,
         })
         return 
     }
@@ -114,7 +116,7 @@ class PhonyMovie extends Component {
                     headerText='Documentary'
                     text='Documentary'
                 />
-                <Genre 
+                {/* <Genre 
                     genreType={ this.state.horror } 
                     headerText='Horror'
                     text='Horror'
@@ -123,7 +125,7 @@ class PhonyMovie extends Component {
                     genreType={ this.state.scifi }
                     headerText='SciFi'
                     text='SciFi'
-                />
+                /> */}
             </div>
         )
     }

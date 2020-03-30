@@ -3,6 +3,7 @@ import './GenreDisplay.css';
 import Image from './../image/Image';
 
 
+
 const GenreDisplay = ({ genreType, headerText, style, text }) => {
     console.log(genreType)
 
