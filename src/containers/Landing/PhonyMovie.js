@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from './node_modules/react';
 // import { Link } from 'react-router-dom';
 import Genre from '../../components/genre/GenreDisplay';
 import './PhonyMovie.css';
