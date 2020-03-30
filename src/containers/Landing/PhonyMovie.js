@@ -99,22 +99,22 @@ class PhonyMovie extends Component {
                 <Genre 
                     genreType={ this.state.action }
                     headerText='Action'
-                    text='Action'
+                    type='Action'
                 />
                 <Genre
                     genreType={ this.state.adventure }
                     headerText='Adventure'
-                    text='Adventure'
+                    type='Adventure'
                 />
                 <Genre 
                     genreType={ this.state.anime }
                     headerText='Anime'
-                    text='Anime'
+                    type='Anime'
                 />
                 <Genre 
                     genreType={ this.state.documentary }
                     headerText='Documentary'
-                    text='Documentary'
+                    type='Documentary'
                 />
                 {/* <Genre 
                     genreType={ this.state.horror } 
