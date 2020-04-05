@@ -58,8 +58,7 @@ class PhonyMovie extends Component {
         // const horrorGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${horrorId}`)
         // const sciFiGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${sciFiId}`)
 
-        Promise.all([ actionGenre, adventureGenre, animeGenre, 
-            documentaryGenre, 
+        Promise.all([ actionGenre, adventureGenre, animeGenre, documentaryGenre, 
             // horrorGenre, sciFiGenre, 
         ])
             .then(values => { return Promise.all(values.map(r => r.json())) })
@@ -70,8 +69,7 @@ class PhonyMovie extends Component {
             .then(this.allGenres)
     }
 
-    allGenres = ([ actionGenre, adventureGenre, animeGenre, 
-        documentaryGenre, 
+    allGenres = ([ actionGenre, adventureGenre, animeGenre, documentaryGenre, 
         // horrorGenre, sciFiGenre 
     ]) => {
         // console.log(actionGenre)
@@ -90,9 +88,11 @@ class PhonyMovie extends Component {
             // horror: Horror, 
             // scifi: SciFi,
         })
-        return 
     }
- 
+
+    // TODO: Try and work logic for Genre component here and pass down to props..?
+    // Maybe pass ...this.state to genreType?
+
     render() {
         return (
             <div className='landing'>

@@ -3,7 +3,7 @@ import './GenreDisplay.css';
 import MoviePoster from '../moviePoster/MoviePoster';
 import FakePoster from '../fakePoster/FakePoster';
 
-const GenreDisplay = ({ genreType, type, headerText, style, text }) => {
+const GenreDisplay = ({ genreType, type, headerText, style }) => {
     console.log(genreType)
 
     let movieGenres = genreType.map((genreList, i) => {
@@ -13,18 +13,23 @@ const GenreDisplay = ({ genreType, type, headerText, style, text }) => {
         let id = genreList.id
         return (
             // TODO: Make each image poster a link that pops up a "modal", with more details to that movie. 
-            // TODO: Condidtion for rendering a blank template inplace of a poster that didn't load.
-            <div key={ id } style={{ margin: '0 5px' }} >
+            <div key={ id } className='posterWrapper' >
                 { poster === null ? 
                 <FakePoster 
-                    src= { `https://image.tmdb.org/t/p/w154/${ poster }` }
+                    // src= { `https://image.tmdb.org/t/p/w154/${ poster }` }
                     alt={ `${ titles } poster` } 
                     text={ `${ titles }` } 
-                    // text='title'
                 /> :
+                // TODO: Get image src as background image. 
                 <MoviePoster 
-                    src={ `https://image.tmdb.org/t/p/w154/${ poster }` } 
+                    src={ `https://image.tmdb.org/t/p/w300/${ poster }` } 
                     alt={ `${ titles } poster` } 
+                    titles={`${ titles }`}
+                    // style={{
+                    //     background: `url(https://image.tmdb.org/t/p/w154/${ poster })`,
+                    //     // backgroundImage: 'linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.65) 80%)',
+                    //     backgroundSize: 'cover'
+                    // }}
                 /> }
             </div>
         )
@@ -32,7 +37,11 @@ const GenreDisplay = ({ genreType, type, headerText, style, text }) => {
     
     return (
         <div className='genre' type={ type }>
-            <h3 style={ style }>{ headerText }</h3>
+            <h2 style={ style }>{ headerText }</h2>
+            {/* 
+                TODO: Look into carousel css, 
+                make margin-right transparent
+            */}
             <div className='genreCarousel'>
                 { movieGenres }
             </div>

@@ -3,7 +3,7 @@ import './FakePoster.css'
 
 const FakePoster = ({ src, alt, style, text }) => {
     return (
-        <div className='fakePoster' src={ src } alt={ alt } >
+        <div className='fakePoster' alt={ alt } >
             <h2>{ text }</h2>
         </div>
     )

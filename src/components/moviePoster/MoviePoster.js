@@ -1,9 +1,12 @@
 import React from 'react';
 import './MoviePoster.css';
 
-const MoviePoster = ({ src, alt, style }) => {
+const MoviePoster = ({ src, alt, titles, style }) => {
     return (
-        <img className='poster' src={ src } alt={ alt } style={ style } />
+        <div className='moviePoster' style={ style } >   
+            <img src={ src } alt={ alt } />
+            {/* <h2>{titles}</h2> */}
+        </div>
     )
 }
 
