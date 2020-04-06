@@ -45,21 +45,21 @@ class PhonyMovie extends Component {
         const genreList= genreObj.genres
         const TMDB = `${process.env.REACT_APP_TMDB_KEY}`
         let actionId = genreList[0].id
-        // let adventureId = genreList[1].id
+        let adventureId = genreList[1].id
         // let animeId = genreList[2].id
         // let documentaryId = genreList[5].id
         // let horrorId = genreList[10].id
         // let sciFiId = genreList[14].id
 
         const actionGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${actionId}`)
-        // const adventureGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${adventureId}`)
+        const adventureGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${adventureId}`)
         // const animeGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${animeId}`)
         // const documentaryGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${documentaryId}`)
         // const horrorGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${horrorId}`)
         // const sciFiGenre = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB}&language=en-US&sort_by=popularity.desc&certification_country=US&include_adult=false&include_video=true&page=1&with_genres=${sciFiId}`)
 
-        Promise.all([ actionGenre, 
-            // adventureGenre, animeGenre, documentaryGenre, 
+        Promise.all([ actionGenre, adventureGenre, 
+            // animeGenre, documentaryGenre, 
             // horrorGenre, sciFiGenre, 
         ])
             .then(values => { return Promise.all(values.map(r => r.json())) })
@@ -70,13 +70,13 @@ class PhonyMovie extends Component {
             .then(this.allGenres)
     }
 
-    allGenres = ([ actionGenre, 
-        // adventureGenre, animeGenre, documentaryGenre, 
+    allGenres = ([ actionGenre, adventureGenre, 
+        // animeGenre, documentaryGenre, 
         // horrorGenre, sciFiGenre 
     ]) => {
         // console.log(actionGenre)
         let Action = actionGenre.results
-        // let Adventure = adventureGenre.results
+        let Adventure = adventureGenre.results
         // let Anime = animeGenre.results
         // let Documentary = documentaryGenre.results
         // let Horror = horrorGenre.results
@@ -84,7 +84,7 @@ class PhonyMovie extends Component {
 
         this.setState ({
             action: Action,
-            // adventure: Adventure,
+            adventure: Adventure,
             // anime: Anime, 
             // documentary: Documentary,
             // horror: Horror, 
@@ -103,12 +103,12 @@ class PhonyMovie extends Component {
                     headerText='Action'
                     type='Action'
                 />
-                {/* <Genre
+                <Genre
                     genreType={ this.state.adventure }
                     headerText='Adventure'
                     type='Adventure'
                 />
-                <Genre 
+                {/* <Genre 
                     genreType={ this.state.anime }
                     headerText='Anime'
                     type='Anime'

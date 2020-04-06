@@ -21,11 +21,11 @@
 }
 .moviePoster .text {
     position: absolute;
-    top: 64%;
+    top: 63%;
     right: 0px;
     left: 0px;
     /* width: 95%; */
-    height: 15%;
+    height: 13%;
     margin: 0;
     color: white;
     z-index: 999;
@@ -46,7 +46,7 @@
 .text .summary {
     font-size: 80%;
     font-weight: 500;
-    height: 87%;
+    height: 84%;
     padding: 5px;
     overflow: auto;
 }
