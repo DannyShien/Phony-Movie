@@ -8,23 +8,26 @@ const GenreDisplay = ({ genreType, type, headerText, style }) => {
 
     let movieGenres = genreType.map((genreList, i) => {
 
-        let titles = genreList.title
+        let title = genreList.title
         let poster = genreList.poster_path
         let id = genreList.id
+        let summary = genreList.overview
+
         return (
             // TODO: Make each image poster a link that pops up a "modal", with more details to that movie. 
             <div key={ id } className='posterWrapper' >
                 { poster === null ? 
                 <FakePoster 
                     // src= { `https://image.tmdb.org/t/p/w154/${ poster }` }
-                    alt={ `${ titles } poster` } 
-                    text={ `${ titles }` } 
+                    alt={ `${ title } poster` } 
+                    text={ `${ title }` } 
                 /> :
                 // TODO: Get image src as background image. 
                 <MoviePoster 
                     src={ `https://image.tmdb.org/t/p/w300/${ poster }` } 
-                    alt={ `${ titles } poster` } 
-                    titles={`${ titles }`}
+                    alt={ `${ title } poster` } 
+                    title={`${ title }`}
+                    summary={ summary }
                     // style={{
                     //     background: `url(https://image.tmdb.org/t/p/w154/${ poster })`,
                     //     // backgroundImage: 'linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.65) 80%)',

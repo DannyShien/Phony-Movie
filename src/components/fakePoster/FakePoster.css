@@ -2,9 +2,9 @@
     display: flex; 
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: auto;
     color: white;
-    /* height: 100%; */
-    /* width: 154px; */
     background-color: gray;
 }
 .fakePoster h2 {
