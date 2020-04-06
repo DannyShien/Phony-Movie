@@ -2,54 +2,79 @@
     height: 100%;
     width: auto;
     position: relative;
-    display: inline-block
-
-}
-.moviePoster::after {
     display: block;
-    position: relative;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.749) 50%, black 100%);
-    margin-top: -175px;
-    height: 172px;
-    width: auto;
-    content: '';
 }
-
 .poster {
     height: 100%;
     width: fit-content;
 }
-.moviePoster .text {
+.posterDetail {
+    opacity: 0;
     position: absolute;
-    top: 63%;
-    right: 0px;
-    left: 0px;
-    /* width: 95%; */
-    height: 13%;
-    margin: 0;
-    color: white;
-    z-index: 999;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    top: 0; 
+    left: 0;
+    color: white; 
+    background-color: rgba(157, 157, 157, 0.75);
+    transition: all 400ms ease-out;
+}
+.moviePoster .posterDetail:hover { 
+    opacity: 1; 
+}
+.moviePoster .posterDetail:hover .title {
+    opacity: 1;
+    transform: translateY(30px);
+}
+.moviePoster .posterDetail:hover .text {
+    opacity: 1; 
+    transform: translateY(40px);
     /* overflow: auto; */
 }
-/* .text::-webkit-scrollbar {
-    display: none
-} */
-.text h2 {
-    font-size: 120%;
+
+.moviePoster .posterDetail .title {
+    font-size: 150%;
     font-weight: 900;
+    letter-spacing: 1px;
     margin: 0;
     padding: 0 5px;
     height: auto;
     width: 70%;
-    /* margin-left: 5px; */
+    opacity: 1; 
+    transition-delay: 0s; 
+    transition-duration: 0.4s;
 }
-.text .summary {
-    font-size: 80%;
-    font-weight: 500;
-    height: 84%;
-    padding: 5px;
-    overflow: auto;
+.moviePoster .posterDetail .text {
+    display: flex;
+    flex-direction: column;
+    /* this sizing causes .text:last-child to push outside its container */
+    /* overflow property does not work */
+    font-size: 90%; 
+
+    font-weight: 600;
+    line-height: 115%;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    margin: 0;
 }
-.summary::-webkit-scrollbar {
-    display: none
+.text p {
+    margin: 0; 
+    padding: 5px; 
 }
+.text p:nth-child(2) {
+    color: yellow;
+}
+.text p:last-child {
+    align-items: center; 
+    background-color: rgba(0, 0, 0, 0.5);
+    line-height: normal;
+    font-size: 75%;
+    /* overflow: auto; */
+}
+
+
+
+
+
