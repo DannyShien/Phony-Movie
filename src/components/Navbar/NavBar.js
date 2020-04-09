@@ -6,7 +6,7 @@ const NavBar = () => {
     return (
         <div className='navbar'>
             <div className='navTitle navAlign'>
-                <Link to = '/' className='links'>PhonyMovies</Link>
+                <Link to = '/' className='links'>MovieApp</Link>
             </div>
             <div className='navOptions navAlign'>
                 <Link to = '/movies' className='links'>Movies</Link>

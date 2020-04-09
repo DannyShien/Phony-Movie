@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import Genre from '../../components/genre/GenreDisplay';
-import './PhonyMovie.css';
+import './MovieApp.css';
 
-class PhonyMovie extends Component {
+class MovieApp extends Component {
     constructor(props) {
         super(props); 
         this.state = {
@@ -135,4 +135,4 @@ class PhonyMovie extends Component {
     
 }
 
-export default PhonyMovie; 
+export default MovieApp; 
