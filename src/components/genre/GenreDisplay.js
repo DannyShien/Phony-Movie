@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './GenreDisplay.css';
 import MoviePoster from '../moviePoster/MoviePoster';
 import FakePoster from '../fakePoster/FakePoster';
@@ -14,14 +15,19 @@ const GenreDisplay = ({ genreType, type, headerText, style }) => {
     return (
       <div key={ id } className='posterWrapper' >
         { poster === null ? 
-        <FakePoster 
-          src= { `https://image.tmdb.org/t/p/w154/${ poster }` }
-          alt={ `${ title } poster` } 
-        /> : 
-        <MoviePoster 
-          src={ `https://image.tmdb.org/t/p/w154/${ poster }` } 
-          alt={ `${ title } poster` } 
-        /> }
+        <Link to='/' >
+          <FakePoster 
+            src= { `https://image.tmdb.org/t/p/w154/${ poster }` }
+            alt={ `${ title } poster` } 
+          /> 
+        </Link> : 
+        <Link to='/'>
+          <MoviePoster 
+            src={ `https://image.tmdb.org/t/p/w154/${ poster }` } 
+            alt={ `${ title } poster` } 
+          />
+        </Link> 
+        }
       </div>
     )
   })
