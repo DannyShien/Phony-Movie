@@ -2,20 +2,22 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/navbar/NavBar';
-import Routes from './routes/Routes';
+import MovieApp from './containers/landing/MovieApp';
+
 
 const App = () => {
-    return (
-			<Router>
-        <Suspense fallback={<p>Loading...</p>} >
-            <div className="App">
-                <NavBar />
-                <Routes />
-            </div>
-        </Suspense>
-			</Router>
-        
-    );
+	return (
+		<Router>
+			<div className="App">
+				<NavBar />
+				<Route path = '/' exact component={MovieApp} />
+				{/* <Route path = '/' exact component={movies} /> */}
+				{/* <Route path = '/' exact component={tv} /> */}
+				{/* <Route path = '/' exact component={mylist} /> */}
+			</div>
+		</Router>
+		
+	);
 }
 
 export default App;
