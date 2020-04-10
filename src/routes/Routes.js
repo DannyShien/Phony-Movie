@@ -14,6 +14,7 @@ const Routes = () => {
       {/* <Route path = '/' exact component={movies} /> */}
       {/* <Route path = '/' exact component={tv} /> */}
       {/* <Route path = '/' exact component={mylist} /> */}
+      <Route path='/:id' component={MovieDetail} />
     </Switch>
   )
 }

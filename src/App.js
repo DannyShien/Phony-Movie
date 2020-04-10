@@ -1,5 +1,5 @@
-import React, { Fragment, Suspense } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar/Navbar'
 import Routes from './routes/Routes'

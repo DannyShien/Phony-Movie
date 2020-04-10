@@ -15,13 +15,13 @@ const GenreDisplay = ({ genreType, type, headerText, style }) => {
     return (
       <div key={ id } className='posterWrapper' >
         { poster === null ? 
-        <Link to='/' >
+        <Link>
           <FakePoster 
             src= { `https://image.tmdb.org/t/p/w154/${ poster }` }
             alt={ `${ title } poster` } 
           /> 
         </Link> : 
-        <Link to='/'>
+        <Link to={{ pathname: `${ id }` }}>
           <MoviePoster 
             src={ `https://image.tmdb.org/t/p/w154/${ poster }` } 
             alt={ `${ title } poster` } 
@@ -32,6 +32,7 @@ const GenreDisplay = ({ genreType, type, headerText, style }) => {
     )
   })
     
+  // TODO: Create next and previous arrows for genreCarousel
   return (
     <div className='genre' type={ type }>
       <h2 style={ style }>{ headerText }</h2>
