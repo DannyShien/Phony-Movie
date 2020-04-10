@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import MovieApp from '../containers/landing/MovieApp';
 
 
-const Movie = lazy(() => import('../containers/movie/Movie'));
+const Movie = lazy(() => import('../containers/movieDetail/Movie'));
 
 
 const Routes = () => {
