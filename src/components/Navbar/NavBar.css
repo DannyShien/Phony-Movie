@@ -1,0 +1,29 @@
+.navbar {
+	display: flex;
+	height: 50px;
+	background-color: lightgrey;
+	padding: 2px;
+}
+.navTitle {
+	justify-content: center;
+	width: 15%;
+}
+.navOptions {
+	justify-content: flex-start;
+	flex: 3;
+	padding-left: 5px;
+}
+.navOptions .links {
+	margin-right: 20px;
+}
+.navProfile {
+	justify-content: space-evenly;
+	flex: 1;
+}
+.navAlign {
+	display: flex; 
+	align-items: center; 
+}
+.links {
+	text-decoration: none;
+}

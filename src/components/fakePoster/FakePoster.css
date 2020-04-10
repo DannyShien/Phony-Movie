@@ -1,0 +1,12 @@
+.fakePoster {
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: auto;
+	color: white;
+	background-color: gray;
+}
+.fakePoster h2 {
+	text-align: center;
+}
