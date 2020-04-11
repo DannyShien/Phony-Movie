@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// import Navbar from '../../components/Navbar/Navbar';
 import Genre from '../../components/genre/GenreDisplay';
 import './MovieApp.css';
 
@@ -101,6 +102,8 @@ class MovieApp extends Component {
 	render() {
 		return (
 			<div className='landing'>
+				{/* NOTE: Would I actually want the navbar here/ to be place where ever I need it?? */}
+				{/* <Navbar /> */}
 				<Genre
 					genreType={ this.state.action }
 					headerText='Action'

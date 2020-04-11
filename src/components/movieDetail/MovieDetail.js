@@ -1,21 +1,27 @@
 import React from 'react';
-import Movie from '../../containers/movieDetail/Movie';
+import './MovieDetail.css';
 
-const MovieDetail = ({ id, backdrop, poster, title, rating, overview, genre, style }) => {
+
+const MovieDetail = ({ id, alt, backdropSrc, posterSrc, title, rating, summary, genres, style }) => {
+  console.log(genres)
+  let genreList = genres.map(genre => {
+    console.log(genre)
+    return <div className='movieGenre' key={genre.id}>{ genre.name }</div> 
+  })
   return (
-    <div>
-      <header>
-        <img src={ backdrop } />
-      </header>
-      <section>
-        <div>
-          <img src={poster} />
-        </div>
-        <div>
-          <h1>{ title }</h1>
-          <p>{ rating }</p>
-          <p>{ overview }</p>
-          {/* <p>genres</p> */}
+    <div className='detailPage'>
+      <img className='backdrop' src={ backdropSrc } alt={ alt } />
+      <section className='overlay'>
+        <div className='details'>
+          <div className='poster'>
+            <img src={ posterSrc } alt={ alt } />
+          </div>
+          <div className='info'>
+            <h1>{ title }</h1>
+            <p>{ `Rating: ${ rating }` }</p>
+            <p>{ summary }</p>
+            <div className='genreList'>{ genreList }</div>
+          </div>
         </div>
       </section>
     </div>

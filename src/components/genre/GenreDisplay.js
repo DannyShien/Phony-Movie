@@ -21,7 +21,7 @@ const GenreDisplay = ({ genreType, type, headerText, style }) => {
             alt={ `${ title } poster` } 
           /> 
         </Link> : 
-        <Link to={{ pathname: `${ id }` }}>
+        <Link to={{ pathname: `/moviedetail/${ id }` }}>
           <MoviePoster 
             src={ `https://image.tmdb.org/t/p/w154/${ poster }` } 
             alt={ `${ title } poster` } 

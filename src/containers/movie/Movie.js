@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieDetail from '../../components/movieDetail/MovieDetail';
-import { withRouter } from 'react-router-dom';
 
 class Movie extends Component  {
-  state = ({ detail: {} })
+  state = ({ detail: {}, genres: [] })
 
   componentDidMount() {
     this.GetMovieDetail()
@@ -16,25 +15,27 @@ class Movie extends Component  {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB}&language=en-US`);
     console.log(response.data)
     this.setState({
-      detail: response.data
+      detail: response.data,
+      genres: response.data.genres
     })
   }
 
   render() { 
     let { detail } = this.state
+    let { genres } = this.state
     return (
-      <div style={{ color: 'white', height: '100vh', width: '100vw' }}>
+      <>
         <MovieDetail 
           id={ detail.id }
           alt={ `${detail.title } poster` }
-          backdrop={ `https://image.tmdb.org/t/p/w154/${ detail.backdrop_path }` }
-          poster={ `https://image.tmdb.org/t/p/w154/${ detail.poster_path }` }
+          backdropSrc={ `https://image.tmdb.org/t/p/w780/${ detail.backdrop_path }` }
+          posterSrc={ `https://image.tmdb.org/t/p/w300/${ detail.poster_path }` }
           title={ detail.title }
           rating={ detail.vote_average }
-          overview={ detail.overview } 
-          genre={ detail}
+          summary={ detail.overview } 
+          genres={ genres }
         />
-      </div>
+      </>
     )
   }  
 }
