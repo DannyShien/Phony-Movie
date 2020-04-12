@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import './Navbar.css'
-import SearchMovie from '../searchMovie/SearchMovie'
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import SearchMovie from '../searchMovie/SearchMovie';
 
 const Navbar = () => {
 	// TODO: Set navbar to fixed postion on scroll,
