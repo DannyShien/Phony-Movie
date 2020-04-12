@@ -7,6 +7,10 @@
   padding: 0 5px;
 }
 span {
-  font-size: 120%;
+  font-size: 110%;
   color: ghostwhite;
+}
+span:hover {
+  color: rgb(235, 235, 235);
+
 }
