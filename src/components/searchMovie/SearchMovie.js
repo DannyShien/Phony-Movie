@@ -10,7 +10,6 @@ class SearchMovie extends Component {
         <SearchForm 
           queryInput={ this.onQueryInput }
           querySubmit={ this.onQuerySubmit }
-
           query={ this.state.query}
         />
       </>
