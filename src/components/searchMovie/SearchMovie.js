@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './SearchMovie.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import SearchForm from '../searchForm/SearchForm';
@@ -9,13 +10,15 @@ class SearchMovie extends Component {
 
   render() {
     return(
-      <div>
+      <div className='search'>
         <SearchForm 
           queryInput={ this.onQueryInput }
           querySubmit={ this.onQuerySubmit }
           query={ this.state.query}
         />
-        <FontAwesomeIcon icon={ faSearch } />
+        <span style={{fonstSize: '120%'}}>
+          <FontAwesomeIcon icon={ faSearch } />
+        </span>
       </div>
     )
   }

@@ -4,10 +4,12 @@ import './Navbar.css'
 import SearchMovie from '../searchMovie/SearchMovie'
 
 const Navbar = () => {
+	// TODO: Set navbar to fixed postion on scroll,
+	// Color fade when in top position. 
 	return (
 		<div className='navbar'>
 			<div className='navTitle navAlign'>
-				<Link to = '/' className='links'>MovieApp</Link>
+				<Link to = '/' className='logoText'>MovieApp</Link>
 			</div>
 			<div className='navOptions navAlign'>
 				<Link to = '/movies' className='links'>Movies</Link>
@@ -17,7 +19,6 @@ const Navbar = () => {
 			</div>
 			<div className='navProfile navAlign'>
 				<SearchMovie />
-				{/* <Link to = '/search'>Search</Link> */}
 				<Link to = '/setting' className='links'>Profile</Link>
 			</div>
 		</div>
