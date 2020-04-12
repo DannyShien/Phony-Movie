@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import './Navbar.css'
-import SearchMovie from '../searchMovie/SearchMovie'
+import './NavBar.css'
 
-const Navbar = () => {
-	// TODO: Set navbar to fixed postion on scroll,
-	// Color fade when in top position. 
+const NavBar = () => {
 	return (
 		<div className='navbar'>
 			<div className='navTitle navAlign'>
-				<Link to = '/' className='logoText'>MovieApp</Link>
+				<Link to = '/' className='links'>MovieApp</Link>
 			</div>
 			<div className='navOptions navAlign'>
 				<Link to = '/movies' className='links'>Movies</Link>
@@ -18,11 +15,11 @@ const Navbar = () => {
 				<Link to = '/mylist' className='links'>My List</Link>
 			</div>
 			<div className='navProfile navAlign'>
-				<SearchMovie />
+				<Link to = '/search'>Search</Link>
 				<Link to = '/setting' className='links'>Profile</Link>
 			</div>
 		</div>
 	)
 }
 
-export default Navbar;
+export default NavBar;

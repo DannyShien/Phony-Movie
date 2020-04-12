@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import Navbar from '../../components/navbar/NavBar';
+// import { Link } from 'react-router-dom';
 import Genre from '../../components/genre/GenreDisplay';
 import './MovieApp.css';
 
@@ -21,8 +20,18 @@ class MovieApp extends Component {
 		this.getMovieGenreIds()
 	}
 
-	// USE ASYNC AWAIT FOR THIS?????
-	getMovieGenreIds = () => {
+	// ========================================
+	// ========= USING ASYNC/AWAIT ============
+	// async getMovieGenres () {
+	//     const TMDB = `${process.env.REACT_APP_TMDB_KEY}`
+	//     const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${TMDB}&language=en-US`)
+	//     // console.log(await response.json())
+	//     const genreData = await response.json()
+	// }
+	// ========================================
+	// ========================================
+
+	  getMovieGenreIds = () => {
 		const TMDB = `${process.env.REACT_APP_TMDB_KEY}`
 		fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${TMDB}&language=en-US`)
 			.then(r => { return r.json() })
@@ -89,8 +98,6 @@ class MovieApp extends Component {
 	render() {
 		return (
 			<div className='landing'>
-				{/* NOTE: Would I actually want the navbar here/ to be place where ever I need it?? */}
-				<Navbar />
 				<Genre
 					genreType={ this.state.action }
 					headerText='Action'
