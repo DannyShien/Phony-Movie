@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './Navbar.css'
+import SearchMovie from '../searchMovie/SearchMovie'
 
 const Navbar = () => {
 	return (
@@ -15,8 +16,8 @@ const Navbar = () => {
 				<Link to = '/mylist' className='links'>My List</Link>
 			</div>
 			<div className='navProfile navAlign'>
-				{/* <SearchInput /> */}
-				<Link to = '/search'>Search</Link>
+				<SearchMovie />
+				{/* <Link to = '/search'>Search</Link> */}
 				<Link to = '/setting' className='links'>Profile</Link>
 			</div>
 		</div>
