@@ -7,21 +7,19 @@ import FakePoster from '../fakePoster/FakePoster';
 const GenreDisplay = ({ genreType, type, headerText, style }) => {
 
   let movieGenres = genreType.map((genreList, i) => {
-
     let id = genreList.id
     let title = genreList.title
     let poster = genreList.poster_path 
-    
     return (
       <div key={ id } className='posterWrapper' >
         { poster === null ? 
-        <Link to='/' >
+        <Link to={{ pathname: `/moviedetail/${ id }` }}>
           <FakePoster 
             src= { `https://image.tmdb.org/t/p/w154/${ poster }` }
             alt={ `${ title } poster` } 
           /> 
         </Link> : 
-        <Link to='/'>
+        <Link to={{ pathname: `/moviedetail/${ id }` }}>
           <MoviePoster 
             src={ `https://image.tmdb.org/t/p/w154/${ poster }` } 
             alt={ `${ title } poster` } 
@@ -32,6 +30,7 @@ const GenreDisplay = ({ genreType, type, headerText, style }) => {
     )
   })
     
+  // TODO: Create next and previous arrows for genreCarousel
   return (
     <div className='genre' type={ type }>
       <h2 style={ style }>{ headerText }</h2>

@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import MovieApp from '../containers/landing/MovieApp';
 
 
-const MovieDetail = lazy(() => import('../containers/movieDetail/MovieDetail'));
+const Movie = lazy(() => import('../containers/movie/Movie'));
 
 
 const Routes = () => {
@@ -14,6 +14,7 @@ const Routes = () => {
       {/* <Route path = '/' exact component={movies} /> */}
       {/* <Route path = '/' exact component={tv} /> */}
       {/* <Route path = '/' exact component={mylist} /> */}
+      <Route exact path='/moviedetail/:id' component={Movie} />
     </Switch>
   )
 }
