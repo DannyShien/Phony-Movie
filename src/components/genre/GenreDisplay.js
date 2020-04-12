@@ -7,15 +7,13 @@ import FakePoster from '../fakePoster/FakePoster';
 const GenreDisplay = ({ genreType, type, headerText, style }) => {
 
   let movieGenres = genreType.map((genreList, i) => {
-
     let id = genreList.id
     let title = genreList.title
     let poster = genreList.poster_path 
-    
     return (
       <div key={ id } className='posterWrapper' >
         { poster === null ? 
-        <Link>
+        <Link to={{ pathname: `/moviedetail/${ id }` }}>
           <FakePoster 
             src= { `https://image.tmdb.org/t/p/w154/${ poster }` }
             alt={ `${ title } poster` } 
