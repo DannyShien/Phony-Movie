@@ -15,6 +15,7 @@ const Navbar = () => {
 				<Link to = '/mylist' className='links'>My List</Link>
 			</div>
 			<div className='navProfile navAlign'>
+				{/* <SearchInput /> */}
 				<Link to = '/search'>Search</Link>
 				<Link to = '/setting' className='links'>Profile</Link>
 			</div>
