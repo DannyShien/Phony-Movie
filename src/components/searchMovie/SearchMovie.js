@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
-import SearchForm from '../searchForm/SearchForm'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+import SearchForm from '../searchForm/SearchForm';
 
 class SearchMovie extends Component {
   state = { query: '' }
 
   render() {
     return(
-      <>
+      <div>
         <SearchForm 
           queryInput={ this.onQueryInput }
           querySubmit={ this.onQuerySubmit }
           query={ this.state.query}
         />
-      </>
+        <FontAwesomeIcon icon={ faSearch } />
+      </div>
     )
   }
 
