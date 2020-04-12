@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/navbar/Navbar';
+// import Navbar from './components/navbar/NavBar';
 import Routes from './routes/Routes';
 
 
@@ -10,7 +10,7 @@ const App = () => {
 		<Router>
       <Suspense fallback={<p>Loading...</p>}>
           <div className="App">
-              <Navbar />
+              {/* <Navbar /> */}
               <Routes />
           </div>
       </Suspense>

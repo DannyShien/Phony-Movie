@@ -1,0 +1,14 @@
+.searchForm {
+  height: 100%; 
+  width: 85%;
+}
+
+.searchInput {
+  height: 80%;
+  width: 100%;
+  font-size: 90%;
+  letter-spacing: 1px;
+  padding-left: 3px;
+  border-style: inset;
+  border-radius: 2px;
+}
