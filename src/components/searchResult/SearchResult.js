@@ -8,7 +8,7 @@ const SearchResult = ({ results }) => {
   return (
     <div className='result'>
       <div className='resultContainer'>
-
+        hello world!
       </div>
     </div>
   )

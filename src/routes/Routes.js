@@ -5,7 +5,7 @@ import MovieApp from '../containers/landing/MovieApp';
 
 
 const Movie = lazy(() => import('../containers/movie/Movie'));
-const SearchFor = lazy() => import('../components/searchFor/SearchFor')
+const SearchResult = lazy(() => import('../components/searchResult/SearchResult')) 
 
 
 const Routes = () => {
@@ -16,7 +16,7 @@ const Routes = () => {
       {/* <Route path = '/' exact component={tv} /> */}
       {/* <Route path = '/' exact component={mylist} /> */}
       <Route exact path='/moviedetail/:id' component={ Movie } />
-      <Route exact path='/searchfor' component={ SearchFor } />
+      <Route exact path='/searchresult' component={ SearchResult } />
     </Switch>
   )
 }

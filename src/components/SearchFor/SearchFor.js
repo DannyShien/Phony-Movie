@@ -1,6 +1,7 @@
-import React, { Component } from './node_modules/react';
-import './MovieSearch.css';
-import axios from './node_modules/axios';
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import './SearchFor.css';
+import axios from 'axios';
 
 import SearchForm from '../searchForm/SearchForm';
 
@@ -23,11 +24,18 @@ class SearchFor extends Component {
   // TODO: Need to redirect to SearchResult after submitting search.
 
   render() {
-    console.log(`NEW STATE: `, this.state.movie)
+    let { movie } =this.state
     return(
       <div className='search'>
         <SearchForm fetch={ this.findMovie } />
-
+        { movie ? 
+          <Redirect 
+            to={{
+              pathname: '/searchresult',
+              state: this.state.movie
+            }}
+          /> : null
+        }
       </div>
     )
   }
