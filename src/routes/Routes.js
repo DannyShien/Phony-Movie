@@ -5,7 +5,7 @@ import MovieApp from '../containers/landing/MovieApp';
 
 
 const Movie = lazy(() => import('../containers/movie/Movie'));
-const SearchFor = lazy() => import('../components/SearchFor/SearchFor')
+const SearchFor = lazy() => import('../components/searchFor/SearchFor')
 
 
 const Routes = () => {

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from './node_modules/react';
 import './MovieSearch.css';
-import axios from 'axios';
+import axios from './node_modules/axios';
 
 import SearchForm from '../searchForm/SearchForm';
 
@@ -19,6 +19,8 @@ class SearchFor extends Component {
       movie: response.data.results
     });
   };
+
+  // TODO: Need to redirect to SearchResult after submitting search.
 
   render() {
     console.log(`NEW STATE: `, this.state.movie)
