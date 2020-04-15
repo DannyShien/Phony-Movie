@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import SearchMovie from '../searchFor/SearchFor';
+import SearchFor from '../searchFor/SearchFor';
 
 const Navbar = () => {
 	// TODO: Set navbar to fixed postion on scroll,
@@ -18,7 +18,7 @@ const Navbar = () => {
 				<Link to = '/mylist' className='links'>My List</Link>
 			</div>
 			<div className='navProfile navAlign'>
-				<SearchMovie />
+				<SearchFor />
 				<Link to = '/setting' className='links'>Profile</Link>
 			</div>
 		</div>

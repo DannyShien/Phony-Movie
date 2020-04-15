@@ -1,8 +1,6 @@
 import React, { lazy } from 'react'; 
 import { Route, Switch } from 'react-router-dom';
-
 import MovieApp from '../containers/landing/MovieApp';
-
 
 const Movie = lazy(() => import('../containers/movie/Movie'));
 const SearchResult = lazy(() => import('../components/searchResult/SearchResult')) 
