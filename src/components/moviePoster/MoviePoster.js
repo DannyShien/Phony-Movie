@@ -3,7 +3,7 @@ import './MoviePoster.css';
 
 const MoviePoster = ({ src, alt, style }) => {
   return (
-    <img className='poster' src={ src } alt={ alt } />
+    <img className='poster' src={ src } alt={ alt } style={ style } />
   )
 }
 

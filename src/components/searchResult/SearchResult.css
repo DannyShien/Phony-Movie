@@ -1,0 +1,23 @@
+.searchResult {
+  height: 100%;
+  width: 100vw;
+  color: white;
+}
+.movieDisplay{
+  display: flex; 
+  justify-content: center;
+}
+.displayContent {
+  width: 85%;
+  margin: 5% 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.moviePoster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: auto;
+  margin: 5px;
+}
