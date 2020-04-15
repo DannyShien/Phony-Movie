@@ -23,6 +23,11 @@ const GenreDisplay = ({ genreType, type, headerText, style }) => {
           <MoviePoster 
             src={ `https://image.tmdb.org/t/p/w154/${ poster }` } 
             alt={ `${ title } poster` } 
+            style={{
+              width: 'auto',
+              display: 'flex',	  
+              alignItems: 'center'
+            }}
           />
         </Link> 
         }
