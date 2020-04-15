@@ -1,6 +1,15 @@
 .searchForm {
   height: 100%; 
-  width: 85%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}
+label {
+  height: 95%;
+  width: 80%;
+
 }
 .searchInput {
   height: 80%;
@@ -10,4 +19,12 @@
   padding-left: 3px;
   border-style: inset;
   border-radius: 2px;
+}
+span {
+  font-size: 110%;
+  color: ghostwhite;
+}
+span:hover {
+  color: rgb(235, 235, 235);
+
 }

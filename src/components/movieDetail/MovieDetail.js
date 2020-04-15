@@ -13,7 +13,7 @@ const MovieDetail = ({ id, alt, backdropSrc, posterSrc, title, rating, summary, 
       <img className='backdrop' src={ backdropSrc } alt={ alt } />
       <section className='overlay'>
         <div className='details'>
-          <div className='poster'>
+          <div className='detailPoster'>
             <img src={ posterSrc } alt={ alt } />
           </div>
           <div className='info'>
