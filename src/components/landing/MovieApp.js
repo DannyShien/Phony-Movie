@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Navbar from '../../components/navbar/NavBar';
-import Genre from '../../components/genre/GenreDisplay';
+import Navbar from '../navbar/NavBar';
+import heroDisplay from '../heroDisplay/HeroDisplay';
+import Genre from '../genre/GenreDisplay';
 import './MovieApp.css';
+import HeroDisplay from '../heroDisplay/HeroDisplay';
 
 class MovieApp extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			heroSection: [],
+			heroSectionData: [],
 			action: [],
 			adventure: [],
 			anime: [],
@@ -27,9 +29,8 @@ class MovieApp extends Component {
 		const TMDB = `${process.env.REACT_APP_TMDB_KEY}`;
 		const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${TMDB}&language=en-US&page=1`);
 		this.setState ({
-			heroSection: response.data.results
+			heroSectionData: response.data.results
 		});
-		
 	}
 
 	// USE ASYNC AWAIT FOR THIS?????
@@ -102,6 +103,7 @@ class MovieApp extends Component {
 			<div className='landing'>
 				{/* NOTE: Would I actually want the navbar here/ to be place where ever I need it?? */}
 				<Navbar />
+				<HeroDisplay popularMovies={ this.state.heroSectionData } />
 				<Genre
 					genreType={ this.state.action }
 					headerText='Action'
