@@ -21,7 +21,7 @@ class SearchFor extends Component {
   };
 
   redirecting = () => {
-    const { movie ,isSubmit } = this.state
+    const { movie , isSubmit } = this.state
     return (
       !isSubmit ?
         <SearchForm fetch={ this.findMovie } />

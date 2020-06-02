@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import MovieDetail from '../../components/movieDetail/MovieDetail';
+import MovieDetail from '../movieDetail/MovieDetail';
 
 class Movie extends Component  {
   state = ({ detail: {}, genres: [] })
