@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 import Navbar from '../../components/navbar/NavBar';
 import Genre from '../../components/genre/GenreDisplay';
 import './MovieApp.css';
@@ -8,6 +8,7 @@ class MovieApp extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			heroSection: [],
 			action: [],
 			adventure: [],
 			anime: [],
@@ -18,7 +19,17 @@ class MovieApp extends Component {
 	}
 
 	componentDidMount() {
+		this.getHeroSection()
 		this.getMovieGenreIds()
+	}
+
+	getHeroSection = async () => {
+		const TMDB = `${process.env.REACT_APP_TMDB_KEY}`;
+		const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${TMDB}&language=en-US&page=1`);
+		this.setState ({
+			heroSection: response.data.results
+		});
+		
 	}
 
 	// USE ASYNC AWAIT FOR THIS?????
