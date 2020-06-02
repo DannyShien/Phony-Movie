@@ -36,6 +36,7 @@ const GenreDisplay = ({ genreType, type, headerText, style }) => {
   })
     
   // TODO: Create next and previous arrows for genreCarousel
+  // Add smooth scroll!!  
   return (
     <div className='genre' type={ type }>
       <h2 style={ style }>{ headerText }</h2>
