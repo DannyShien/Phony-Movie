@@ -1,8 +1,7 @@
 import React, { lazy } from 'react'; 
 import { Route, Switch } from 'react-router-dom';
-import MovieApp from '../containers/landing/MovieApp';
-
-const Movie = lazy(() => import('../containers/movie/Movie'));
+import MovieApp from '../components/landing/MovieApp';
+const Movie = lazy(() => import('../components/movie/Movie'));
 const SearchResult = lazy(() => import('../components/searchResult/SearchResult')) 
 
 

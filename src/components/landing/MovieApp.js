@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Navbar from '../navbar/NavBar';
-import Genre from '../genre/GenreDisplay';
+import Navbar from '../../components/navbar/NavBar';
+import Genre from '../../components/genre/GenreDisplay';
 import './MovieApp.css';
 
 class MovieApp extends Component {
