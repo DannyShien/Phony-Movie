@@ -10,6 +10,9 @@ const HeroDisplay = ({ popularMovie }) => {
       <img 
         src={ `https://image.tmdb.org/t/p/w780/${ backdrop }` }
       />
+      <section className='imageOverlay'>
+
+      </section>
     </div>
   )
 };
