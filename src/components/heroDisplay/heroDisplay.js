@@ -1,10 +1,15 @@
-import React from 'react' 
+import React from 'react'; 
+import './HeroDisplay.css';
 
-const HeroDisplay = ({ popularMovies }) => {
-
+const HeroDisplay = ({ popularMovie }) => {
+  console.log(popularMovie)
+  // let id = popularMovie.id
+  let backdrop = popularMovie.backdrop_path
   return (
     <div className='heroSection'>
-      Hero Display!
+      <img 
+        src={ `https://image.tmdb.org/t/p/w780/${ backdrop }` }
+      />
     </div>
   )
 };

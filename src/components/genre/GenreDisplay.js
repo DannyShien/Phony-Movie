@@ -5,7 +5,6 @@ import MoviePoster from '../moviePoster/MoviePoster';
 import FakePoster from '../fakePoster/FakePoster';
 
 const GenreDisplay = ({ genreType, type, headerText, style }) => {
-
   let movieGenres = genreType.map((genreList, i) => {
     let id = genreList.id
     let title = genreList.title
