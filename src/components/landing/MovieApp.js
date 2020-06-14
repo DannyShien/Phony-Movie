@@ -107,8 +107,11 @@ class MovieApp extends Component {
 	render() {
 		return (
 			<div className='landing'>
-				{/* NOTE: Would I actually want the navbar here/ to be place where ever I need it?? */}
-				<NavBar />
+				{/* 
+					NOTE: Would I actually want the navbar here/ to be place where ever I need it?? 
+					NavBar still needs design work done. 
+				*/}
+				<NavBar /> 
 				<HeroDisplay popularMovie={ this.state.heroSectionData } />
 				<Genre
 					genreType={ this.state.action }
