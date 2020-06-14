@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-
-import Navbar from '../../components/navbar/NavBar';
-import Genre from '../../components/genre/GenreDisplay';
+import axios from 'axios';
+import NavBar from '../navbar/NavBar';
+import HeroDisplay from '../heroDisplay/HeroDisplay';
+import Genre from '../genre/GenreDisplay';
 import './MovieApp.css';
 
 class MovieApp extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			heroSectionData: [],
 			action: [],
 			adventure: [],
 			anime: [],
@@ -18,8 +20,24 @@ class MovieApp extends Component {
 	}
 
 	componentDidMount() {
+		this.getHeroSection()
 		this.getMovieGenreIds()
 	}
+
+	getHeroSection = async () => {
+		const TMDB = `${process.env.REACT_APP_TMDB_KEY}`;
+		const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${TMDB}&language=en-US&page=1`);
+		let popularMovie = response.data.results[0]
+		// let popularMovies = response.data.results
+		// 	.filter((i, index) => (index < 3))
+		// 	.map((i, index) => {
+		// 		return i
+		// 	});
+		this.setState ({
+			heroSectionData: popularMovie
+		});
+	}
+
 
 	// USE ASYNC AWAIT FOR THIS?????
 	getMovieGenreIds = () => {
@@ -89,8 +107,12 @@ class MovieApp extends Component {
 	render() {
 		return (
 			<div className='landing'>
-				{/* NOTE: Would I actually want the navbar here/ to be place where ever I need it?? */}
-				<Navbar />
+				{/* 
+					NOTE: Would I actually want the navbar here/ to be place where ever I need it?? 
+					NavBar still needs design work done. 
+				*/}
+				<NavBar /> 
+				<HeroDisplay popularMovie={ this.state.heroSectionData } />
 				<Genre
 					genreType={ this.state.action }
 					headerText='Action'

@@ -1,11 +1,12 @@
 .navbar {
 	display: flex;
-	height: 7vh;
+	height: 8vh;
 	width: 100vw;
-	background-image: linear-gradient(rgb(4, 4, 4)15%, rgb(196, 42, 42));
+	background-image: linear-gradient(rgb(4, 4, 4)15%, rgba(255, 255, 255, 0.035));
 	padding: 2px;
 	position: fixed;
 	top:  0;
+	z-index: 1;
 }
 .navTitle {
 	justify-content: center;
