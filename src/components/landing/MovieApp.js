@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Navbar from '../navbar/NavBar';
+import NavBar from '../navbar/NavBar';
 import HeroDisplay from '../heroDisplay/HeroDisplay';
 import Genre from '../genre/GenreDisplay';
 import './MovieApp.css';
@@ -108,7 +108,7 @@ class MovieApp extends Component {
 		return (
 			<div className='landing'>
 				{/* NOTE: Would I actually want the navbar here/ to be place where ever I need it?? */}
-				<Navbar />
+				<NavBar />
 				<HeroDisplay popularMovie={ this.state.heroSectionData } />
 				<Genre
 					genreType={ this.state.action }

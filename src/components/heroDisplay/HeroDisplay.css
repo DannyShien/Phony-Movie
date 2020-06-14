@@ -1,16 +1,15 @@
 .heroSection {
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
-  /* position: relative; */
+  position: relative;
 }
 .heroSection img {
   height: 100%;
   width: 100%;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.304), black) */
 }
 .imageOverlay {
   background-image: linear-gradient(rgba(0, 0, 0, 0) 90%, black);
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   position: absolute;
   top: 0;

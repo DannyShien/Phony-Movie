@@ -6,6 +6,7 @@
 	padding: 2px;
 	position: fixed;
 	top:  0;
+	z-index: 1;
 }
 .navTitle {
 	justify-content: center;
